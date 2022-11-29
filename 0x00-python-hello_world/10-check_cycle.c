@@ -1,10 +1,9 @@
 #include "lists.h"
 
 /**
- * check_cycle - checks for loops in cycles
- * @list: linked list
- * Return: 0 if there is no loop, or
- * 1 if there is a loop
+ * check_cycle - function checks for the loop
+ * list: structure
+ * Return: 0 if no cyle, 1 if there is cycle
  */
 
 int check_cycle(listint_t *list)
@@ -20,6 +19,6 @@ int check_cycle(listint_t *list)
 		if (ptr1 == ptr2)
 			return (1);
 	}
-
 	return (0);
 }
+
