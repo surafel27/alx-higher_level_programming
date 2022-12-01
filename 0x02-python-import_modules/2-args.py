@@ -7,6 +7,6 @@ if __name__ == "__main__":
     elif j >= 1:
         print("{} arguments:".format(j))
         for i, arg in enumerate(sys.argv):
-            if i != 0:
-                print("{:d}: {}".format(i, arg))
-            i += 1
+            if i == 0:
+                continue
+            print("{:d}: {}".format(i, arg))
