@@ -8,9 +8,9 @@ def roman_to_int(roman_string):
         return 0
     val = 0
     c = 0
-    l = len(roman_string)
-    while c < l:
-        if c + 1 < l and roman_string[c:c + 2] in roman:
+    _len = len(roman_string)
+    while c < _len:
+        if c + 1 < _len and roman_string[c:c + 2] in roman:
             val += roman[roman_string[c:c + 2]]
             c += 2
         else:
