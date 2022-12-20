@@ -7,11 +7,12 @@ class Square:
     Attributes:
        __size (int): size of the square
     """
-    def __init__(self, __size):
+    def __init__(self, size):
         """Initialize the Square
         Args:
             size (int): size of the square
         Returns: None
         """
+        self.__size = size
         pass
     pass
