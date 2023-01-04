@@ -73,6 +73,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return (2 * self.height) + (2 * self.width)
+
     def __str__(self):
         """
         print() __str__ method function to return rectangle in char '#'
@@ -82,7 +83,7 @@ class Rectangle:
             return res
 
         for x in range(self.__height):
-            if i == self.__height - 1:
+            if x == self.__height - 1:
                 res += ('#' * self.__width)
             else:
                 res += (('#' * self.__width) + '\n')
