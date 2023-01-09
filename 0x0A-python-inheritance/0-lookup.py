@@ -3,9 +3,7 @@
 
 
 def lookup(obj):
-    """Fuction that returns the list of avil. attributes and method 
-    of an object
     """
-
-
+   Fuction that returns the list of avil. attributes and method of an object
+    """
     return dir(obj)
