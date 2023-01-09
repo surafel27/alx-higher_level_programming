@@ -20,7 +20,7 @@ class Square(Rectangle):
     def area(self):
         """return the area of size * size"""
         return self.__size * self.__size
-    
+
     def __str__(self):
         """returns the square"""
         return "[Square] {}/{}".format(self.__size, self.__size)
