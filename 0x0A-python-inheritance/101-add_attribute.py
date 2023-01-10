@@ -7,10 +7,7 @@ def add_attribute(a_class, name, value):
     """Adds new attribute to an object if it's possible
     """
 
-    # Set for O(1) membership test
-    cannot_add = {int, str, float, list, dict, tuple, frozenset, type, object}
-
-    if type(a_class) in cannot_add:
+    if ('__dict__' in dir(a_class)):
+        setattr(a_class, name, value)
+    else:
         raise TypeError("can't add new attribute")
-
-    a_class.__setattr__(name, value)
