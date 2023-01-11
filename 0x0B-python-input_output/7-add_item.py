@@ -13,5 +13,5 @@ if __name__ == "__main__":
         loadFile = load_from_json_file(filename)
     except FileNotFoundError:
         loadFile = []
-    loadFile.extend(argv[1:])
-    save_to_json_file(loadFile, filename)
+
+    save_to_json_file(loadFile + argv[1:], filename)
