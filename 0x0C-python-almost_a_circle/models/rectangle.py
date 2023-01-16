@@ -21,11 +21,11 @@ class Rectangle(Base):
             y(int): integer
             and id as a public attribute
         """
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
 
     @property
     def width(self):
@@ -89,7 +89,9 @@ class Rectangle(Base):
 
     def display(self):
         """defining display to print the # in terms of width and height"""
-        print("\n".join("#" * self.__width for i in range(self.__height)))
+        print("\n" * self.y, end="")
+        print("\n".join(" " * self.x + "#" * self.__width
+              for i in range(self.__height)))
 
     def __str__(self):
         """defining __str__ """
@@ -121,3 +123,13 @@ class Rectangle(Base):
                     self.x = kwargs["x"]
                 if "y" in kwargs:
                     self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """return the dictionary representation"""
+        dictnry = {}
+        dictnry["id"] = self.id
+        dictnry["width"] = self.width
+        dictnry["height"] = self.height
+        dictnry["x"] = self.x
+        dictnry["y"] = self.y
+        return dictnry
