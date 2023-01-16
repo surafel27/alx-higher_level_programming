@@ -89,14 +89,20 @@ class Rectangle(Base):
 
     def display(self):
         """defining display to print the # in terms of width and height"""
-        print("\n" * self.y, end="")
-        print("\n".join(" " * self.x + "#" * self.__width
-              for i in range(self.__height)))
+        for yy in range(0, self.__y):
+            print()
+        for i in range(0, self.__height):
+            for x in range(0, self.__x):
+                print(" ", end="")
+            for j in range(0, self.__width):
+                print("#", end="")
+            print()
 
     def __str__(self):
         """defining __str__ """
-        return "[Rectangle] ({}) {}/{} - {}/{}" \
-               .format(self.id, self.x, self.y, self.width, self.height)
+        s = "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
+        return s
 
     def update(self, *args, **kwargs):
         """defining update function to update the value of class attribute"""
@@ -108,21 +114,24 @@ class Rectangle(Base):
                     self.width = value
                 elif key == 2:
                     self.height = value
-                elif key == 2:
+                elif key == 3:
                     self.x = value
                 else:
                     self.y = value
-            else:
-                if "id" in kwargs:
-                    self.id = kwargs["id"]
-                if "width" in kwargs:
-                    self.width = kwargs["width"]
-                if "height" in kwargs:
-                    self.height = kwargs["height"]
-                if "x" in kwargs:
-                    self.x = kwargs["x"]
-                if "y" in kwargs:
-                    self.y = kwargs["y"]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if type(value) != int and value is not None:
+                        raise TypeError("id must be an integer")
+                        self.id = value
+                if key == "width":
+                    self.width = value
+                if key == "height":
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
 
     def to_dictionary(self):
         """return the dictionary representation"""
