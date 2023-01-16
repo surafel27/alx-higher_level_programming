@@ -17,7 +17,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """define a property size"""
-        return self.height
+        return self.__width
 
     @size.setter
     def size(self, value):
@@ -27,8 +27,9 @@ class Square(Rectangle):
 
     def __str__(self):
         """prints the property of square"""
-        return ("[Square] ({}) {}/{} - {}"
-                .format(self.id, self.x, self.y, self.height))
+        s = ("[Square] ({}) {}/{} - {}".format(
+            self.id, self.x, self.y, self.__width))
+        return s
 
     def update(self, *args, **kwargs):
         """assignes attribute"""
@@ -43,14 +44,17 @@ class Square(Rectangle):
                 else:
                     self.y = value
         else:
-            if "id" in kwargs:
-                self.id = kwargs["id"]
-            if "size" in kwargs:
-                self.size = kwargs["size"]
-            if "x" in kwargs:
-                self.x = kwargs["x"]
-            if "y" in kwargs:
-                self.y = kwargs["y"]
+            for key, value in kwargs.items():
+                if key == "id":
+                    if type(value) != int and value is not None:
+                        raise TypeError("id must be an integer")
+                    self.id = value
+            if key == "size":
+                self.size = value
+            if key == "x":
+                self.x = value
+            if key == "y":
+                self.y = value
 
     def to_dictionary(self):
         """return the dictinary representation"""
