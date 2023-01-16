@@ -101,7 +101,7 @@ class Rectangle(Base):
     def __str__(self):
         """defining __str__ """
         s = "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height)
+            self.id, self.x, self.y, self.width, self.height)
         return s
 
     def update(self, *args, **kwargs):
@@ -121,9 +121,7 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 if key == "id":
-                    if type(value) != int and value is not None:
-                        raise TypeError("id must be an integer")
-                        self.id = value
+                    self.id = value
                 if key == "width":
                     self.width = value
                 if key == "height":
@@ -135,10 +133,6 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """return the dictionary representation"""
-        dictnry = {}
-        dictnry["id"] = self.id
-        dictnry["width"] = self.width
-        dictnry["height"] = self.height
-        dictnry["x"] = self.x
-        dictnry["y"] = self.y
+        dictnry = {'id': self.id, 'width': self.width,
+                   'height': self.height, 'x': self.x, 'y': self.y}
         return dictnry
