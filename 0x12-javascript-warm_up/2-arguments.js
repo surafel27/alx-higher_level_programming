@@ -1,8 +1,7 @@
 #!/usr/bin/node
 
-import argv from 'node:process';
 //validating the argument
-if (argv){
+if (process.argv.length >= 3){
 console.log('Argument found');
 }
 else
