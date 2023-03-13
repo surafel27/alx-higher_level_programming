@@ -1,7 +1,10 @@
 #!/usr/bin/node
 
-//validating the argument
-if (process.argv.length >= 3){
+if (process.argv.length > 3){
+console.log('Argument found');
+}
+else if (process.argv.length === 3)
+{
 console.log('Argument found');
 }
 else
