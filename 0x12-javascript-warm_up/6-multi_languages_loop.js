@@ -2,6 +2,6 @@
 
 const strArrays = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-for (let strArray of strArrays) {
-  console.log(strArray);
+for (let i = 0; i < strArrays.length; i++) {
+  console.log(strArrays[i]);
 }
