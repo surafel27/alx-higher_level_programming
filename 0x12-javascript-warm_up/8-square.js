@@ -5,14 +5,14 @@ let string = '';
 if (strNumber) {
   for (let i = 0; i < strNumber; i++) {
     for (let j = 0; j < strNumber; j++) {
-     string += 'X';
+      string += 'X';
     }
-    if ( i == strNumber - 1) {
-     break;
-      }
+    if (i === strNumber - 1) {
+      break;
+    }
     string += '\n';
-}
-console.log(string);
+  }
+  console.log(string);
 } else {
   console.log('Missing size');
-} 
+}
