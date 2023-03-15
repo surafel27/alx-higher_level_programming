@@ -9,11 +9,11 @@ module.exports = class Rectangle {
       this.height = h;
     }
   }
-  print () {
+  print (c = 'X') {
     let string = '';
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j <this.width; j++) {
-        string += 'X';
+        string += c;
       }
       if (i === this.height - 1) {
         break;
