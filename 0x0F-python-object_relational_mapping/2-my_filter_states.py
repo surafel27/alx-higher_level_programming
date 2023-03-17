@@ -10,7 +10,8 @@ if __name__ == '__main__':
                          db=sys.argv[3], port=3306)
     names = sys.argv[4]
     cur = db.cursor()
-    SQL = f"SELECT * FROM states WHERE name = '{names}'"
+    SQL = "SELECT * FROM states WHERE CONVERT(`name` USING Latin1) \
+            COLLATE Latin1_General_CS = '{}';".format(names)
     cur.execute(SQL)
     states = cur.fetchall()
     for state in states:
