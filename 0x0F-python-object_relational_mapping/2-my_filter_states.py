@@ -10,7 +10,8 @@ if __name__ == '__main__':
                          db=sys.argv[3], port=3306)
     names = sys.argv[4]
     cur = db.cursor()
-    cur.execute(f"SELECT * FROM states WHERE name = '{names}' ORDER BY states.id ASC")
+    SQL = f"SELECT * FROM states WHERE name = '{names}'"
+    cur.execute(SQL)
     states = cur.fetchall()
     for state in states:
         print(state)
