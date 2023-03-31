@@ -4,8 +4,8 @@
 if __name__ == "__main__":
     import urllib
     from urllib import request
-    req = urllib.request.Request('https://alx-intranet.hbtn.io/status')
-    with urllib.request.urlopen(req) as response:
+    url = 'https://alx-intranet.hbtn.io/status'
+    with urllib.request.urlopen(url) as response:
         the_response = response.read()
         html = the_response.decode('UTF-8')
         print("Body response:")
