@@ -6,8 +6,8 @@ from urllib import request, parse
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    email = {"email": sys.argv[2]}
-    query_string = urllib.parse.urlencode(email)
+    val = {"email": sys.argv[2]}
+    query_string = urllib.parse.urlencode(val)
     data = query_string.encode("ascii")
     req = urllib.request.Request(url, data)
     with urllib.request.urlopen(req) as response:
