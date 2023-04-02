@@ -9,6 +9,7 @@ if __name__ == "__main__":
     val = {"email": sys.argv[2]}
     query_string = urllib.parse.urlencode(val)
     data = query_string.encode("ascii")
+
     req = urllib.request.Request(url, data)
     with urllib.request.urlopen(req) as response:
         response_text = response.read()
