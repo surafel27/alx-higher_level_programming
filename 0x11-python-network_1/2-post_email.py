@@ -2,7 +2,12 @@
 import urllib
 import sys
 from urllib import request, parse
-""" sends a POST request to the passed URL with the email """
+""" sends a POST request to the passed URL with the email
+    - takes url
+    - send a post request
+    - send it with email parameter
+    - display the reasponse in utf-8 format
+"""
 
 if __name__ == "__main__":
     url = sys.argv[1]
