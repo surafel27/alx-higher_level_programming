@@ -7,5 +7,5 @@ res.on('error', function (error) {
   console.log(error);
 });
 res.on('response', function (response) {
-  console.log('code: ', response.statusCode);
+  console.log('code: ', response && response.statusCode);
 });
